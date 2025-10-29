@@ -3,33 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agentforce Messaging</title>
+  <title>Agentforce Chat Bot</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f6f9;
+      color: #333;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #0070d2;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
 </head>
+
 <body>
-  <h2>Welcome to Agentforce</h2>
-  <p>Chat with our support team below </p>
+  <h1>Welcome to Agentforce Support</h1>
+  <p>Click the chat bubble at the bottom-right corner to talk with our virtual agent.</p>
 
- <script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+  <!-- 🧩 Salesforce Embedded Messaging Script -->
+  <script type='text/javascript'>
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-			embeddedservice_bootstrap.init(
-				'00Dfj000008u1Ug',
-				'agent',
-				'https://orgfarm-f389a6218e-dev-ed.develop.my.site.com/ESWagent1761723248132',
-				{
-					scrt2URL: 'https://orgfarm-f389a6218e-dev-ed.develop.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://orgfarm-f389a6218e-dev-ed.develop.my.site.com/ESWagent1761723248132/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+        embeddedservice_bootstrap.init(
+          '00Dfj000008u1Ug',
+          'k_messaging_channel',
+          'https://orgfarm-f389a6218e-dev-ed.develop.my.site.com/ESWkmessagingchannel1761728992491',
+          {
+            scrt2URL: 'https://orgfarm-f389a6218e-dev-ed.develop.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    };
+  </script>
 
+  <script type='text/javascript'
+          src='https://orgfarm-f389a6218e-dev-ed.develop.my.site.com/ESWkmessagingchannel1761728992491/assets/js/bootstrap.min.js'
+          onload='initEmbeddedMessaging()'>
+  </script>
+
+  <footer>© 2025 Agentforce Demo</footer>
 </body>
 </html>
-
-
